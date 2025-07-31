@@ -18,7 +18,7 @@ def load_model():
     global checkpoint, model, char_to_int, int_to_char, vocab_size
     
     # Vérifier si un modèle entraîné existe
-    checkpoint_path = 'models/checkpoint_epoch_5.pth'  # Utiliser le dernier checkpoint
+    checkpoint_path = 'models/checkpoint_epoch_5.pth'  
     if not os.path.exists(checkpoint_path):
         print(f"Erreur: Fichier de modèle introuvable: {checkpoint_path}")
         return False
@@ -39,9 +39,9 @@ def load_model():
     # Initialiser le modèle avec les mêmes paramètres que pendant l'entraînement
     model = TextGenerator(
         vocab_size=vocab_size,
-        embedding_dim=128,  # Ajusté pour correspondre au modèle entraîné
-        hidden_dim=256,     # Ajusté pour correspondre au modèle entraîné
-        n_layers=1,         # Ajusté pour correspondre au modèle entraîné
+        embedding_dim=128,  
+        hidden_dim=256,     
+        n_layers=1,         
         dropout=0.2
     ).to(device)
     

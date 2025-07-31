@@ -40,9 +40,7 @@ class TextGenerator(nn.Module):
         h0 = torch.zeros(self.n_layers, batch_size, self.hidden_dim, device=device)
         c0 = torch.zeros(self.n_layers, batch_size, self.hidden_dim, device=device)
         
-        # Pour une meilleure initialisation, on peut utiliser une initialisation xavier
-        # nn.init.xavier_uniform_(h0)
-        # nn.init.xavier_uniform_(c0)
+       
         
         return (h0, c0)
 
